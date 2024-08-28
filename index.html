@@ -26,6 +26,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
       }
 
       nav .logo {
@@ -36,6 +37,7 @@
       nav .nav-links {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
       }
 
       nav .nav-links li {
@@ -113,6 +115,7 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         width: 30%;
         min-width: 250px;
+        flex: 1 1 30%;
       }
 
       .feature h3 {
@@ -141,10 +144,12 @@
       footer .footer-links {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       footer .footer-links li {
-        margin-left: 2rem;
+        margin: 0 1rem;
       }
 
       footer .footer-links a {
@@ -154,6 +159,56 @@
 
       footer .footer-links a:hover {
         text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+
+        nav .nav-links {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav .nav-links li {
+          margin: 0.5rem 0;
+        }
+
+        .features-container {
+          flex-direction: column;
+        }
+
+        .feature {
+          width: 90%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cta-button {
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+        }
+
+        .hero {
+          padding: 3rem 1rem;
+        }
+
+        .hero-content h1 {
+          font-size: 1.5rem;
+        }
+
+        .hero-content p {
+          font-size: 0.9rem;
+        }
+
+        footer .footer-content {
+          flex-direction: column;
+        }
       }
     </style>
 
@@ -209,23 +264,42 @@
       })();
     </script>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1585066069022909');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1585066069022909&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "1585066069022909");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1585066069022909&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -233,9 +307,6 @@ src="https://www.facebook.com/tr?id=1585066069022909&ev=PageView&noscript=1"
       <div class="logo">Express Marketing</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
